@@ -1,6 +1,6 @@
 var socket = new WebSocket("ws://localhost:8080/ws");
 
-const connect = () => {
+const connect = (chatHistory, userName) => {
   console.log("Attempting Connection...");
 
   socket.onopen = () => {
@@ -9,6 +9,7 @@ const connect = () => {
 
   socket.onmessage = (msg) => {
     console.log(msg);
+    chatHistory(msg);
   };
 
   socket.onclose = (event) => {
@@ -20,9 +21,13 @@ const connect = () => {
   };
 };
 
-let sendMsg = (msg) => {
-  console.log("sending msg: ", msg);
-  socket.send(msg);
+let sendMsg = (msg, userName, msgType) => {
+  const payload = {
+    user_id: userName,
+    type: msgType,
+    body: msg,
+  };
+  socket.send(JSON.stringify(payload));
 };
 
 export { connect, sendMsg };
