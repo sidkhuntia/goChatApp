@@ -1,19 +1,4 @@
-# FILEPATH
 
-"""
-This code implements the architecture of the project.
-
-The project follows a layered architecture pattern, with the following layers:
-
-1. Presentation Layer: Responsible for handling user interactions and displaying information to the user.
-2. Business Layer: Contains the business logic of the project, including data processing and validation.
-3. Data Access Layer: Handles the interaction with the database or external data sources.
-4. Infrastructure Layer: Provides infrastructure-related functionalities, such as logging and configuration.
-
-The architecture promotes separation of concerns and modularity, allowing for easier maintenance and scalability of the project.
-
-Note: This is a high-level overview of the architecture. For more detailed information, please refer to the project's documentation.
-"""
 ## Setup Process
 
 To get started with the goChatApp project, follow these steps:
